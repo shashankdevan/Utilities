@@ -1,0 +1,27 @@
+%LATEX code snippet to have continued numbering in enumerate
+
+\newcounter{saveenumi}
+\newcommand{\seti}{\setcounter{saveenumi}{\value{enumi}}}
+\newcommand{\conti}{\setcounter{enumi}{\value{saveenumi}}}
+
+
+\begin{document}
+
+\begin{frame}[<+->]
+  \begin{enumerate}
+  \item foo
+  \item bar%
+    \seti
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}[<+->]
+  \begin{enumerate}
+    \conti
+  \item zip
+  \item yadda%
+    \seti
+  \end{enumerate}
+\end{frame}
+
+\end{document}
